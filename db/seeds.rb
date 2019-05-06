@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email:'mutmutblop@yopmail.com', encrypted_password:'password', description:'I love pasta', first_name:'Mutmut', last_name:'Blop')
+
+Event.create(user_id: User.last.id, title:'Best birthday ever', description:'Je fais ça pour avoir plein de cadeaux')
