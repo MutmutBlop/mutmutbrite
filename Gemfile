@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'dotenv-rails'
 gem 'faker'
 gem 'table_print'
+gem 'devise'
 
 gem "letter_opener", :group => :development
 
