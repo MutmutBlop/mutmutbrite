@@ -1,1 +1,63 @@
-VIVE LA FRANCE 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>mutmutbrite</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4 font-weight-bold">Les meilleurs events, le tien avec</h1>
+          <h2 class="display-5">Ton event sera vu par des milliers de gens, qui en inviteront des milliers d'autres, et il fera les gros titres de la gazette de ton village.</h2>
+          <p>Tu feras le buzz, ce qui t'apportera une célébrité relative durant quelques semaines. Tu prendras la grosse tête un peu trop vite, et tu commenceras à consommer des substances illicites pour oublier le fait que tu tombes peu à peu dans l'oubli. Bref, tu mourras comme une rockstar. Sauf que la gazette du village n'en parlera pas elle non plus.</p>
+          <p><%= link_to "Crée ton premier événement", root_path, class:"btn btn-warning btn-lg", role:"button" %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <% @events.each do |event| %>
+          <div class="col-sm-4" style="padding: 30px">
+        <div class="card" style="width: 22rem;">
+          <div class="card-body">
+            <h3 class="card-title"> <%= event.title %> </h3>
+            <p class="card-text">  <%= event.description %> </p>
+            <p> <%= link_to "Voir", root_path, class:"btn btn-info btn-sm", role:"button" %> </p>
+          </div>
+        </div>
+        </div>
+        <% end %>
+      </div>
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; mutmutbrite 2019</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
