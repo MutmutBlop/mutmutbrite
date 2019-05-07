@@ -13,4 +13,4 @@ Pour tester l'app :
 * Se rendre sur localhost:3000/ dans le navigateur
 * Enjoy ce super site
 
-Ou bien se rendre sur https://mutmutbrite.herokuapp.com/ une fois que le front sera mis en place :) 
+Ou bien se rendre sur https://mutmutbrite.herokuapp.com/ :) 

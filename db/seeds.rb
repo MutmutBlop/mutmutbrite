@@ -30,12 +30,12 @@ end
 puts "Users have been created"
 
 # Events creation
-20.times do
+10.times do
   Event.create!(
     start_date: Faker::Time.forward(420),
     duration: rand(1..100)*5,
-    title: Faker::Lorem.characters(10),
-    description: Faker::Lorem.paragraph,
+    title: "Daily brunch: let's eat " + Faker::Food.fruits + " with " + Faker::Dessert.topping,
+    description: Faker::TvShows::HowIMetYourMother.quote,
     price: rand(1..1000),
     location: Faker::Address.city,
     user_id: User.all.sample.id
