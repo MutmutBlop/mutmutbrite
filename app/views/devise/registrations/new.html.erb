@@ -29,11 +29,12 @@
         </div>
 
         <div class="field form-group">
-          <%= f.label 'Mot de passe' %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> caratères minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Mot de passe" %>
+            <% var = "Mot de passe (#{@minimum_password_length} caractères minimum)" %>
+          <% else %>
+            <% var ="Mot de passe" %>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder: var %>
         </div>
 
         <div class="field form-group">
