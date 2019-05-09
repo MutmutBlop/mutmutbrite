@@ -11,24 +11,21 @@
 
     <h2 class="mt-4 mb-4">Inscription</h2>
 
-    <div class="container">
+    <div class="col mt-3 col-3 mx-auto">
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field form-group">
-          <%= f.label 'Prénom' %><br />
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:"form-control" %>
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:"form-control", placeholder:"Prénom" %>
         </div>
 
         <div class="field form-group">
-          <%= f.label 'Nom' %><br />
-          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:"form-control" %>
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:"form-control", placeholder:"Nom" %>
         </div>
 
         <div class="field form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
         </div>
 
         <div class="field form-group">
@@ -36,12 +33,11 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> caratères minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+          <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Mot de passe" %>
         </div>
 
         <div class="field form-group">
-          <%= f.label 'Confirmation du mot de passe' %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirmation du mot de passe" %>
         </div>
 
         <div class="actions form-group">
@@ -49,6 +45,8 @@
         </div>
 
       <% end %>
+
+      <%= render "devise/shared/links" %>
 
     </div>
 
