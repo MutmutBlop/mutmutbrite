@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
   end
 
-  resources :events
+  resources :events do
+    resources :charges
+  end
 
 end
