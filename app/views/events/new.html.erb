@@ -1,0 +1,60 @@
+<% if @event.errors.any? %>
+<div class="alert alert-danger" role="alert">
+ <p>Oups, il manque quelque chose...</p>
+ <ul>
+   <% @event.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+   <% end %>
+ </ul>
+</div>
+<% end %>
+
+<div class="text-dark">
+  <h3 class="text-center mt-3 mb-4">Crée ton événement</h3>
+
+  <!-- Zone du formulaire -->
+  <%= form_tag events_path, multipart: true, class: "col col-4 mx-auto" do %>
+
+  <div class="field form-group">
+  <b><%= label_tag 'Titre' %>
+  <%= text_field_tag 'title', @event.title, class: "form-control"  %>
+  <small id="emailHelp" class="form-text text-muted mb-3">En 5 à 140 caractères :)</small>
+  </div>
+
+  <div class="field form-group">
+  <b><%= label_tag "Date de l'event" %></b><br>
+  <%= date_select("date", "written_on", start_year: 2019, class:"form-control") %> à <%= time_select("article", "sunrise")%><br>
+  </div>
+
+  <div class="field form-group">
+  <b><%= label_tag 'Durée' %></b><br>
+  <%=  select_minute(30 , minute_step: 5) %> minutes
+  </div>
+
+  <div class="field form-group">
+  <b><%= label_tag 'Description' %></b>
+  <%= text_area_tag 'description', @event.description, class: "form-control"  %>
+  <small id="emailHelp" class="form-text text-muted mb-3">En 20 à 1000 caractères</small>
+  </div>
+
+  <div class="field form-group">
+  <b><%= label_tag 'Prix' %></b>
+  <%= text_field_tag 'price', @event.price, class: "form-control mb-3", placeholder: "€" %>
+  </div>
+
+  <div class="field form-group">
+  <b><%= label_tag 'Lieu' %></b>
+  <%= text_field_tag 'location', @event.location, class: "form-control mb-3"  %>
+
+  <div class="field form-group">
+  <b><%= label_tag 'Jolie image' %></b><br>
+  <%= file_field_tag :picture, class: "mb-3" %>
+  </div>
+
+  <div class="field form-group">
+  <%= submit_tag "Créer l'event", class: "btn btn-primary mb-4 mt-3" %>
+  </div>
+
+  <% end %>
+
+</div>

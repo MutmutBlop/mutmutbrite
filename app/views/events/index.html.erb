@@ -28,7 +28,7 @@
           <h1 class="display-4 font-weight-bold">Les meilleurs events, le tien aussi</h1>
           <h2 class="display-5">Ton event sera vu par des milliers de gens, qui en inviteront des milliers d'autres, et il fera les gros titres de la gazette de ton village.</h2>
           <p>Tu feras le buzz, ce qui t'apportera une célébrité relative durant quelques semaines. Tu prendras la grosse tête un peu trop vite, et tu commenceras à consommer des substances illicites pour oublier le fait que tu tombes peu à peu dans l'oubli. Bref, tu mourras comme une rockstar. Sauf que la gazette du village n'en parlera pas elle non plus.</p>
-          <p><%= link_to "Crée ton premier événement", root_path, class:"btn btn-warning btn-lg", role:"button" %></p>
+          <p><%= link_to "Crée ton premier événement", new_event_path, class:"btn btn-warning btn-lg", role:"button" %></p>
         </div>
       </div>
 
@@ -44,7 +44,7 @@
             <h5 class="card-subtitle mb-2 text-muted">🗓 <%= event.start_date %> </h5>
             <h5 class="card-subtitle mb-2 text-muted">✅ <%= event.attendances.count %> participants </h5>
             <p class="card-text mt-3">  <%= event.description %> </p>
-            <p> <%= link_to "Voir", root_path, class:"btn btn-primary btn-sm", role:"button" %> </p>
+            <p> <%= link_to "Voir", event_path(id: event.id), class:"btn btn-primary btn-sm", role:"button" %> </p>
           </div>
         </div>
         </div>
