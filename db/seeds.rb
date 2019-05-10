@@ -19,19 +19,24 @@ puts "*"*30
 
 # Users creation
 20.times do |index|
-  User.create!(
+@user = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   description: Faker::Lorem.paragraph,
   email: "thp#{index}@yopmail.com",
   password: "password"
   )
+
+  @user.avatar.attach(io: File.open('app/assets/images/users/default_avatar.jpg'), filename: 'avatar.jpg')
+
+  @user.save
 end
+
 puts "Users have been created"
 
 # Events creation
 10.times do
-  Event.create!(
+  @event = Event.new(
     start_date: Faker::Time.forward(420),
     duration: rand(1..100)*5,
     title: "Daily brunch: let's eat " + Faker::Food.fruits + " with " + Faker::Dessert.topping,
@@ -40,7 +45,12 @@ puts "Users have been created"
     location: Faker::Address.city,
     user_id: User.all.sample.id
     )
+
+  @event.picture.attach(io: File.open('app/assets/images/events/food.jpg'), filename: 'event.jpg')
+
+  @event.save
 end
+
 puts "Events have been created"
 
 70.times do

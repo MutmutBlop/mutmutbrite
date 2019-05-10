@@ -37,6 +37,7 @@
         <% @events.each do |event| %>
           <div class="col-sm" style="padding: 15px">
         <div class="card" style="width: 32rem;">
+          <%= image_tag event.picture, alt: 'mutmutbrite', style:'object-fit: cover; height: 120px; width: 100%; display: block;' %>
           <div class="card-body">
             <h4 class="card-title mb-3"> <%= event.title %> </h4>
             <h5 class="card-subtitle mb-2 text-muted">🤠 <%= event.user.first_name %> </h5>
